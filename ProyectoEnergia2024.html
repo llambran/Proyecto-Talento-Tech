@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Solar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            color: green;
+        }
+        p {
+            text-align: justify;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        form label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            display: block;
+            width: 100%;
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ENERGÍA SOLAR</h1>
+        <h2>Energías limpias en Colombia</h2>
+        <p>
+            La energía solar es una fuente de energía renovable y limpia que ha ganado una importancia creciente en las últimas décadas.
+        </p>
+        <h3>Beneficios Ambientales:</h3>
+        <ul>
+            <li>Reducción de emisiones de gases de efecto invernadero.</li>
+            <li>Fuente de energía limpia.</li>
+            <li>Reducción de la huella de carbono.</li>
+        </ul>
+        <h3>Beneficios Económicos:</h3>
+        <ul>
+            <li>Reducción de costos a largo plazo.</li>
+            <li>Generación de empleo.</li>
+            <li>Independencia energética.</li>
+        </ul>
+
+        <!-- Imagen -->
+        <img src="https://www.labodegasolar.com/cdn/shop/articles/placas-solares-tejado-thinkstock-getty-1662535982.jpg?v=1667323017" alt="Paneles solares">
+
+        <!-- Formulario de registro -->
+        <form id="formulario-registro" action="#" method="POST">
+            <h3>Regístrate para más información</h3>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            
+            <button type="submit">Enviar Información</button>
+        </form>
+
+        <!-- Formulario para estimación de energía renovable -->
+        <form id="formulario-energia" action="#" method="POST">
+            <h3>Estimación de Energía Renovable</h3>
+            <label for="consumo-total">Consumo Eléctrico Total (kWh):</label>
+            <input type="number" id="consumo-total" name="consumo-total" required>
+            
+            <button type="button" onclick="calcularEnergia()">Calcular Energía Renovable</button>
+        </form>
+
+        <p id="resultado-energia"></p>
+
+        
+    <div class="container">
+        <h4>NUESTROS ALIADOS !</h4>
+        <p>
+            "Si estás interesado en aprender con nuestros expertos, inscríbete en uno de nuestros cursos de energía solar impartidos junto a nuestros aliados. Regístrate haciendo clic en el siguiente enlace."
+  <!-- enlace del aliado para los cuersos de nergia solar -->
+  <a href="https://www.solarenergy.org/es/?utm_term=certificaci%C3%B3n%20energ%C3%ADa%20solar&utm_campaign=SRCH%20-%20Spanish%20Program&utm_source=bing&utm_medium=ppc&hsa_acc=9067276784&hsa_cam=21837177823&hsa_grp=1167683258065612&hsa_ad&hsa_src=o&hsa_tgt=kwd-72980937582603%3Aloc-43&hsa_kw=certificaci%C3%B3n%20energ%C3%ADa%20solar&hsa_mt=b&hsa_net=adwords&hsa_ver=3&msclkid=164d3923e6c7185581965e7794f67543&utm_content=Cursos%20Online%20de%20Energ%C3%ADa%20Solar%20-%20phrase
+  ">Nuestro aliado en capacitaciones</a>
+        </p>
+                
+
+    </div>
+
+    <script>
+        // Función para almacenar datos en un archivo .TXT (simulada para este ejemplo)
+        document.getElementById('formulario-registro').onsubmit = function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const telefono = document.getElementById('telefono').value;
+
+            const datos = `Nombre: ${nombre}\nCorreo: ${correo}\nTeléfono: ${telefono}\n`;
+            console.log(datos); // Aquí podrías enviar estos datos a un servidor para guardarlos en un archivo .TXT
+        };
+
+        // Función para calcular la energía renovable
+        function calcularEnergia() {
+            const consumoTotal = document.getElementById('consumo-total').value;
+
+            // Ejemplo de cálculo simple, en realidad necesitarías detalles específicos de cada fuente de energía renovable
+            const energiaRenovable = consumoTotal * 0.6; // Supongamos que el 60% del consumo puede ser de energía renovable
+            document.getElementById('resultado-energia').textContent = `Energía Renovable Estimada: ${energiaRenovable} kWh`;
+        }
+       
+
+    </script>
+</body>
+</html>
